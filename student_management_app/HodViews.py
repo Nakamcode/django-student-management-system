@@ -197,7 +197,7 @@ def add_course_save(request):
             messages.success(request, "Course Added Successfully!")
             return redirect('add_course')
         except:
-            messages.error(request, "Failed to Add Course!")
+            messages.error(request, "Failed to Add Class!")
             return redirect('add_course')
 
 
