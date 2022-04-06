@@ -272,10 +272,10 @@ def add_session_save(request):
         try:
             sessionyear = SessionYearModel(session_start_year=session_start_year, session_end_year=session_end_year)
             sessionyear.save()
-            messages.success(request, "Session Year added Successfully!")
+            messages.success(request, "Term Date added Successfully!")
             return redirect("add_session")
         except:
-            messages.error(request, "Failed to Add Session Year")
+            messages.error(request, "Failed to Add Term Date")
             return redirect("add_session")
 
 
@@ -302,10 +302,10 @@ def edit_session_save(request):
             session_year.session_end_year = session_end_year
             session_year.save()
 
-            messages.success(request, "Session Year Updated Successfully.")
+            messages.success(request, "Term Date Updated Successfully.")
             return redirect('/edit_session/'+session_id)
         except:
-            messages.error(request, "Failed to Update Session Year.")
+            messages.error(request, "Failed to Update Term Date.")
             return redirect('/edit_session/'+session_id)
 
 
