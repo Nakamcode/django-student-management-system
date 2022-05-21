@@ -330,6 +330,7 @@ def staff_add_result_save(request):
         student_admin_id = request.POST.get('student_list')
         assignment_marks = request.POST.get('assignment_marks')
         exam_marks = request.POST.get('exam_marks')
+        total_marks = request.POST.get('total_marks')
         subject_id = request.POST.get('subject')
 
         student_obj = Students.objects.get(admin=student_admin_id)
@@ -342,6 +343,7 @@ def staff_add_result_save(request):
                 result = StudentResult.objects.get(subject_id=subject_obj, student_id=student_obj)
                 result.subject_assignment_marks = assignment_marks
                 result.subject_exam_marks = exam_marks
+                result.subject_total_marks = total_marks
                 result.save()
                 messages.success(request, "Result Updated Successfully!")
                 return redirect('staff_add_result')

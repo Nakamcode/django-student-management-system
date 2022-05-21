@@ -29,7 +29,8 @@
                                         <th>Subject</th>
                                         <th>Assignments Marks</th>
                                         <th>Exam Marks</th>
-                                        <th>status</th>
+                                        <th>Total</th>
+                                        <th>Grade</th>
                                     </tr>
                                     </thead>
                                     
@@ -39,9 +40,10 @@
                                         <td>{{ row.subject_id.subject_name }}</td>
                                         <td>{{ row.subject_assignment_marks }}</td>
                                         <td>{{ row.subject_exam_marks }}</td>
+                                        <td>{{ row.subject_total_marks }}</td>
                                         <td>
                                             {% if row.subject_exam_marks >= 40 %}
-                                                <span class="alert alert-success">Pass</span>
+                                                <span class="alert alert-success">1</span>
                                             {% else %}
                                                 <span class="alert alert-danger">Fail</span>
                                             {% endif %}
@@ -52,6 +54,7 @@
                             </div>
                         </div>
                         <!-- /.card-body -->
+                        <!-- I have work here -->
                     </div>
                 </div>
             </div>
